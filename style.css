@@ -1,23 +1,27 @@
-body{
-    display:flex;
+body {
+    display: flex;
     align-content: center;
     flex-direction: column;
 }
 
-.header{
-    font-size:30px;
+.header {
+    font-size: 30px;
     text-align: center;
 }
 
-#gridContainer{
+#gridContainer {
     align-self: center;
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
-    margin:20px;
+    margin: 20px;
 }
 
-.square{
+.square {
     border: 2px solid black;
-    height:30px;
-    width:30px;
+    height: 30px;
+    width: 30px;
+}
+
+.black {
+    background-color: black;
 }
