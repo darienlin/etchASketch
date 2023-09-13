@@ -15,7 +15,18 @@ makeGrid(16, 16)
 const squareArray = document.querySelectorAll('.square')
 
 squareArray.forEach(function (elem) {
-    elem.addEventListener('mouseover', () => {
+    elem.addEventListener('drag', () => {
         elem.classList.add('black')
     })
+})
+
+function clearBoard(){
+squareArray.forEach(function(elem){
+    elem.classList.remove('black')
+})
+}
+
+const clearButton = document.querySelector('#clear')
+clearButton.addEventListener('click', () =>{
+    clearBoard()
 })

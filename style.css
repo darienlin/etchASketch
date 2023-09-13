@@ -1,7 +1,9 @@
 body {
     display: flex;
     align-content: center;
-    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    background-color: blanchedalmond;
 }
 
 .header {
@@ -17,11 +19,24 @@ body {
 }
 
 .square {
-    border: 2px solid black;
+
     height: 30px;
     width: 30px;
+    background-color: white;
 }
 
 .black {
     background-color: black;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#clear {
+    height: 10%;
+    padding: 20px;
+    margin: 20px;
 }
