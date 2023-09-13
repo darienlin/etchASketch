@@ -3,7 +3,7 @@ body {
     align-content: center;
     justify-content: center;
     align-items:center;
-    background-color: blanchedalmond;
+    background-color: #ffebcd;
 }
 
 .header {
@@ -39,4 +39,18 @@ body {
     height: 10%;
     padding: 20px;
     margin: 20px;
+    background-color: #CDE1FF;
+    border:2px solid #8ab0ea;
+    border-radius: 5px;
+}
+
+.sliderContainer{
+    padding:10px;
+    background-color: #CDE1FF;
+    border:2px solid #8ab0ea;
+    border-radius: 5px;
+}
+
+.slider{
+    color:#CDE1FF;
 }

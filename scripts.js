@@ -9,13 +9,18 @@ function makeGrid(row, col) {
 
 //makes the 16x16 grid
 makeGrid(16, 16)
+const sliderContainer = document.querySelector('.sliderContainer')
+const slider = document.querySelector('.slider')
+let area = document.createElement('div')
+area.textContent = slider.value + 'x' + slider.value
+sliderContainer.appendChild(area)
 
 
 //function that allows the white squares to turn black
 const squareArray = document.querySelectorAll('.square')
 
 squareArray.forEach(function (elem) {
-    elem.addEventListener('drag', () => {
+    elem.addEventListener('mouseover', () => {
         elem.classList.add('black')
     })
 })
@@ -30,3 +35,4 @@ const clearButton = document.querySelector('#clear')
 clearButton.addEventListener('click', () =>{
     clearBoard()
 })
+
