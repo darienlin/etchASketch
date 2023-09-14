@@ -6,23 +6,25 @@ body {
     background-color: #ffebcd;
 }
 
+.center{
+    align-self: center;
+}
+
 .header {
     font-size: 30px;
     text-align: center;
 }
 
 #gridContainer {
-    align-self: center;
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
     margin: 20px;
+    width:600px;
+    height:600px;
 }
 
-.square {
-
-    height: 30px;
-    width: 30px;
+.blank {
     background-color: white;
+    border:.5px solid lightgray;
 }
 
 .black {
@@ -39,18 +41,28 @@ body {
     height: 10%;
     padding: 20px;
     margin: 20px;
+    border-radius: 5px;
+}
+
+.sidebarColors{
     background-color: #CDE1FF;
     border:2px solid #8ab0ea;
-    border-radius: 5px;
+}
+
+.clickedButton{
+    background-color: #9ebeed;
+    border:2px solid #71a2eb;
 }
 
 .sliderContainer{
     padding:10px;
-    background-color: #CDE1FF;
-    border:2px solid #8ab0ea;
     border-radius: 5px;
 }
 
 .slider{
     color:#CDE1FF;
+}
+
+slider:hover{
+    opacity: 1;
 }

@@ -1,38 +1,60 @@
-//populates the grid with visible grid squares
-const gridContainer = document.querySelector('#gridContainer')
-function makeGrid(row, col) {
-    for (let i = 0; i < col * row; i++) {
-        let cell = document.createElement("div");
-        gridContainer.appendChild(cell).className = "square";
+//grid
+const gridContainer = document.querySelector('#gridContainer');
+var squareArray = document.querySelectorAll('.blank');
+function makeGrid(row){
+    gridContainer.style.gridTemplateColumns = (`repeat(${row}, 1fr`)
+    gridContainer.style.gridTemplateRows = (`repeat(${row}, 1fr`)
+
+    for(let i = 0; i < row * row; i++){
+        var blankSquare = document.createElement('div')
+        blankSquare.classList.add('blank')
+        gridContainer.appendChild(blankSquare)
     }
+    squareArray = document.querySelectorAll('.blank')
+    squareArray.forEach(elem =>{
+        elem.addEventListener('mousedown', () =>{
+            elem.classList.add('black')
+        })
+    })
 }
 
-//makes the 16x16 grid
-makeGrid(16, 16)
+function clearGrid() {
+    while(gridContainer.firstChild) {
+      gridContainer.removeChild(gridContainer.firstChild);
+    }
+  }
+
+  //makes the grid
+makeGrid(16)
+
+
+//slider
 const sliderContainer = document.querySelector('.sliderContainer')
 const slider = document.querySelector('.slider')
-let area = document.createElement('div')
-area.textContent = slider.value + 'x' + slider.value
-sliderContainer.appendChild(area)
+var sliderVal = slider.value
+var sliderContent = document.createElement('div')
+//sliderContent.classList.add('center')
+sliderContent.textContent = sliderVal + 'x' + sliderVal
+sliderContainer.appendChild(sliderContent)
+
+slider.addEventListener('change', () =>{
+    var sliderVal = slider.value
+    sliderContent.textContent = sliderVal + 'x' + sliderVal
+    clearGrid();
+    makeGrid(sliderVal);
+})
 
 
-//function that allows the white squares to turn black
-const squareArray = document.querySelectorAll('.square')
 
-squareArray.forEach(function (elem) {
-    elem.addEventListener('mouseover', () => {
-        elem.classList.add('black')
+//clear button
+const clearBtn = document.querySelector('#clear')
+clearBtn.addEventListener('mousedown', () =>{
+    squareArray.forEach(elem =>{
+        elem.classList.remove('black')
     })
+    clearBtn.classList.add('clickedButton')
 })
 
-function clearBoard(){
-squareArray.forEach(function(elem){
-    elem.classList.remove('black')
+clearBtn.addEventListener('mouseup', () =>{
+    clearBtn.classList.remove('clickedButton')
 })
-}
-
-const clearButton = document.querySelector('#clear')
-clearButton.addEventListener('click', () =>{
-    clearBoard()
-})
-
