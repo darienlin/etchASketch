@@ -12,7 +12,7 @@ function makeGrid(row){
     }
     squareArray = document.querySelectorAll('.blank')
     squareArray.forEach(elem =>{
-        elem.addEventListener('mousedown', () =>{
+        elem.addEventListener('mouseover', () =>{
             elem.classList.add('black')
         })
     })
@@ -33,7 +33,7 @@ const sliderContainer = document.querySelector('.sliderContainer')
 const slider = document.querySelector('.slider')
 var sliderVal = slider.value
 var sliderContent = document.createElement('div')
-//sliderContent.classList.add('center')
+sliderContent.classList.add('center')
 sliderContent.textContent = sliderVal + 'x' + sliderVal
 sliderContainer.appendChild(sliderContent)
 
